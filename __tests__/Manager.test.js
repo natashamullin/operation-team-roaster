@@ -1,12 +1,12 @@
-const Manager = require('../lib/classes.js')
+const Manager = require('../lib/Manager.js')
 
 test('creats a Manager profile', () => {
-    const manager = new Manager(name, title);
+    const manager = new Manager(name);
 
-    expect(manager.name).toBe('Jim');
+    expect(manager.name).toBe('Manager');
     expect(manager.title).toBe('Manager');
     expect(manager.id).toEqual(expect.any(Number));
-    expect(manager.email).toEqual(expect.any(Object));
-    expect(manager.github).toEqual(expect.any(Object));
+    expect(manager.email).toBe("email@email.com");
+    expect(manager.github).toBe("github.com");
 
 });
