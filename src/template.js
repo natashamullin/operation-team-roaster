@@ -1,4 +1,5 @@
 // template helper code
+
 const Template = `<div class="card ">
                             <div class="cardheader">
                               <span class=" grey-text text-darken-4">${this.title}<i class="material-icons right">close</i></span>
