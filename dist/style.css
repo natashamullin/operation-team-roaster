@@ -1,0 +1,38 @@
+/* // rendered output (HTML) and CSS style sheet */
+.header{
+background-color: black;
+color: aliceblue;
+font-size: xx-large;
+font-family: Arial, Helvetica, sans-serif;
+text-align: center;
+}
+
+.cardheader{
+    background-color: azure;
+}
+
+.card{
+    border: 1px solid;
+    border-radius: 5px;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+    
+}
+
+.row {
+    display: flex;
+    justify-content: center ;
+    flex-wrap: wrap;
+  }
+  
+  @media only screen and (min-width: 720px){
+    .card {
+      max-width: 40%
+    }
+    .card-image{
+    max-height: 20rem; 
+    overflow: hidden;
+    }
+  }
+  @media only screen and (min-width: 1100px) {:root {--Nhexa: 6;}}
+  @media only screen and (max-width: 600px) {}
