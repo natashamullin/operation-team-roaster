@@ -3,21 +3,21 @@ const Intern = require("../lib/Intern");
 const Manager = require("../lib/Manager");
 
 // template helper code
-function generateCard() {
+function generateCard(employee) {
 
   // template if employee get role mataches manager then get info and generate card. 
-  if (getRole() === "Manager") {
+  if (employee.getRole() === "Manager") {
     return `<div class="card ">
   <div class="cardheader">
-    <span class=" grey-text text-darken-4">${getRole()}<i class="material-icons right">close</i></span>
+    <span class=" grey-text text-darken-4">${employee.getRole("Manager")}<i class="material-icons right">close</i></span>
   </div>
   <div class="card-content">
-    <span class="card-title activator grey-text text-darken-4">${getName()}<i class="material-icons right">more_vert</i></span>
-    <p>${getManagerOffice()}</p>
-    <p>${getId()}</p>
+    <span class="card-title activator grey-text text-darken-4">${employee.getName("Manager")}<i class="material-icons right">more_vert</i></span>
+    <p>${employee.getManagerOffice("Manager")}</p>
+    <p>${employee.getId("Manager")}</p>
   </div>
   <div class="card-reveal">
-  <p><a href="#">${getEmail()}</a></p>
+  <p><a href="#">${employee.getEmail("Manager")}</a></p>
     <p></p>
   </div>
 </div>
