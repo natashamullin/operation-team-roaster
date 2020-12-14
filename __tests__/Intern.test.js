@@ -1,9 +1,19 @@
-const Intern = require('../lib/Intern.js')
+const Engineer = require("../lib/Engineer");
 
-test('creats an intern profile', () => {
-    const intern = new Intern(school);
-
-    expect(intern.school).toEqual(expect.any(String));
+test("Can set GitHUb account via constructor", () => {
+    const testValue = "GitHub";
+    const employee = new Engineer("Bill", 1, "asd@gmail.com", testValue);
+    expect(employee.github).toBe(testValue);
 });
 
+test("getRole() should return \"Engineer\"", () => {
+    const testValue = "Engineer";
+    const employee = new Engineer("Bill", 1, "asd@gmail.com", "GitHub");
+    expect(employee.getRole()).toBe(testValue);
+});
 
+test("Can get GitHub username via getGithub()", () => {
+    const testValue = "GitHub";
+    const employee = new Engineer("Bill", 1, "asd@gmail.com", testValue);
+    expect(employee.getEngineerGithub()).toBe(testValue);
+});

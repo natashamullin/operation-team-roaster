@@ -3,10 +3,27 @@ const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
 const { generatePage, writeFile } = require('./src/template2');
-let team = [];
+const team = [];
 const promptManager = () => {
+
     inquirer
         .prompt([
+            {
+                type: 'list',
+                name: 'role',
+                message: "Are you the Manager?",
+                choices: ["Yes", "no"],
+                validate: choices => {
+                    if (choices === "yes") {
+                        this.manager = new Manager(role);
+                        team.push(this.manager);
+                        return true;
+                    } else {
+                        console.log("Sorry only the Manager is able to input employee information!")
+                    }
+                }
+            },
+
             {
                 type: 'input',
                 name: 'name',
@@ -39,9 +56,9 @@ const promptManager = () => {
                 message: 'What is the office number?'
             },
         ])
-        .then(({ name, id, email, officeNumber }) => {
-            this.manager = new Manager(name, id, email, officeNumber);
-            team.push(this.manager);
+        .then(answers => {
+            const manager = new Manager(answers.role, answers.name, answers.id, answers.email, answers.officeNumber,);
+            team.push(manager);
             console.log(team);
             promptTeamMember()
         })
@@ -51,7 +68,7 @@ const promptTeamMember = () => {
         .prompt({
             type: 'list',
             message: 'Would you like to add a team member?',
-            name: 'addMember',
+            name: 'role',
             choices: ['Engineer', 'Intern', 'No']
         })
         .then(({ addMember }) => {
@@ -89,15 +106,15 @@ const promptTeamMember = () => {
                             when: (answers) => answers.role === 'Intern'
                         }
                     ])
-                    .then(({ name, id, email, role, github, school }) => {
+                    .then(answers => {
                         if (role === 'Engineer') {
-                            this.engineer = new Engineer(name, id, email, github);
-                            team.push(this.engineer);
+                            const engineer = new Engineer(answers.role, answers.name, answers.id, answers.email, answers.github);
+                            team.push(engineer);
                             console.log(team);
                             promptMemberTeam()
                         } else {
-                            this.intern = new Intern(name, id, email, school);
-                            team.push(this.intern);
+                            const intern = new Intern(answers.role, answers.name, answers.id, answers.email, answers.school);
+                            team.push(intern);
                             console.log(team);
                             promptTeamMember()
                         }
