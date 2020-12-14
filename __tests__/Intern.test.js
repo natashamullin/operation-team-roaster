@@ -1,9 +1,19 @@
-const Intern = require('../lib/Intern.js')
+const Intern = require("../lib/Intern");
 
-test('creats an intern profile', () => {
-    const intern = new Intern(school);
-
-    expect(intern.school).toEqual(expect.any(String));
+test("Can set school via constructor", () => {
+    const testValue = "MIT";
+    const e = new Intern("Stacy", 1, "asd@gmail.com", testValue);
+    expect(e.school).toBe(testValue);
 });
 
+test("getRole() should return \"Intern\"", () => {
+    const testValue = "Intern";
+    const e = new Intern("Stacy", 1, "asd@gmail.com", "UCLA");
+    expect(e.getRole()).toBe(testValue);
+});
 
+test("Can get school via getSchool()", () => {
+    const testValue = "MIT";
+    const e = new Intern("Stacy", 1, "asd@gmail.com", testValue);
+    expect(e.getInternSchool()).toBe(testValue);
+});

@@ -84,9 +84,9 @@ module.exports = teamMembers => {
 
                   <section>
                     <div class="row" id="card">
-                    ${teamMembers.filter((employee) => employee.getRole() === "Manager").forEach(generateCard(employee))}
-                    ${teamMembers.filter((employee) => employee.getRole() === "Engineer").forEach(generateCard(employee))}
-                    ${teamMembers.filter((employee) => employee.getRole() === "Intern").forEach(generateCard(employee))}
+                    ${teamMembers.filter((employee) => employee.getRole() === "Manager").map(generateCard())}
+                    ${teamMembers.filter((employee) => employee.getRole() === "Engineer").map(generateCard())}
+                    ${teamMembers.filter((employee) => employee.getRole() === "Intern").map(generateCard())}
                   </div>
                   </section>
 

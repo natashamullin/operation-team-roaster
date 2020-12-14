@@ -20,7 +20,7 @@ const prompts = {
                 type: 'list',
                 name: 'role',
 
-                message: 'What is you Job title?',
+                message: 'What is your Job title?',
 
                 choices: ['Manager', 'Engineer', 'Intern', "end"]
 
