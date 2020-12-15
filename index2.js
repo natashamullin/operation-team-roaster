@@ -16,7 +16,6 @@ const promptManager = () => {
                 validate: choices => {
                     if (choices === "yes") {
                         this.manager = new Manager(role);
-                        // team.push(this.manager);
                         return true;
                     } else {
                         console.log("Sorry only the Manager is able to input employee information!")

@@ -17,3 +17,10 @@ As I would love to take full credit on this i had some amazing help from Westley
 Team work makes the dream work!
 ## License
 No license used
+
+## links
+view the walk through here
+https://drive.google.com/file/d/12Ng-jkV9m92FXSgosJo2xNyQiY6fKNSU/view
+
+github repo link here
+https://github.com/natashamullin/operation-team-roaster
