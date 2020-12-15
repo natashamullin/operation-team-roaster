@@ -2,9 +2,10 @@ const fs = require("fs");
 
 const generateCard = (team) => {
     console.log("you made it here")
+    console.log(team[0])
     return `
         ${team
-            .filter((member) => member.role === "Manager")
+            .filter((team) => team.getRole() === "Manager")
             .map(({ name, id, email, officeNumber }) => {
                 return `
             <div class="card">
@@ -24,7 +25,7 @@ const generateCard = (team) => {
             })
             .join('')}
         ${team
-            .filter((member) => member.role === "Engineer")
+            .filter((team) => team.getRole() === "Engineer")
             .map(({ name, id, email, github }) => {
                 return `
             <div class="card">
@@ -44,7 +45,7 @@ const generateCard = (team) => {
             })
             .join('')}
         ${team
-            .filter((member) => member.role === "Intern")
+            .filter((team) => team.getRole() === "Intern")
             .map(({ name, id, email, school }) => {
                 return `
             <div class="card">

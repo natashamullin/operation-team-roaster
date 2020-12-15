@@ -4,7 +4,7 @@ const Employee = require("../lib/classes");
 test("Can set office number with constructor argument", () => {
     const testValue = 100;
     const employee = new Manager("Betty", 1, "asd@gmail.com", testValue);
-    expect(employee.office).toBe(testValue);
+    expect(employee.officeNumber).toBe(testValue);
 });
 
 test("getRole() should return \"Manager\"", () => {
@@ -13,8 +13,3 @@ test("getRole() should return \"Manager\"", () => {
     expect(employee.getRole()).toBe(testValue);
 });
 
-test("Can get office number with getOffice()", () => {
-    const testValue = 100;
-    const employee = new Manager("Betty", 1, "asd@gmail.com", testValue);
-    expect(employee.getManagerOffice()).toBe(testValue);
-});
